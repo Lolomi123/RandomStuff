@@ -1,0 +1,90 @@
+package stuff;
+
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+public class PyramidMakerApp {
+public static void main(String[] args) {
+	
+	
+	Scanner userInput = new Scanner(System.in);
+	
+	System.out.println("Enter number of rows");
+	int numberOfRows;
+	Double doubleParsed = (Double.parseDouble(userInput.nextLine()));
+	numberOfRows = (int) Math.ceil(doubleParsed);
+	
+	
+	System.out.println("Enter character");
+	String character; 
+	character = userInput.nextLine();
+	
+	int amountOfSpace = numberOfRows;
+	int numberOfCharacters = 0;
+	
+	
+
+		
+		
+		if(character.length()>1) {
+			
+			//multiple characters
+			
+			
+			//first character
+			numberOfCharacters = 1;
+			int amountOfSpaceSubtracted = character.length()/2 -1 ;
+			System.out.println();
+			for(int  k=0; k<amountOfSpace + character.length() + 15; k++) {
+				System.out.print(" ");
+			}
+			System.out.print(character);
+			amountOfSpace = amountOfSpace-1;
+			
+			//rest of the characters
+			for(int i=0; i<numberOfRows;i++) {
+				System.out.println();
+				numberOfCharacters++;
+			
+			
+			for(int  k=0; k<amountOfSpace + character.length() + 15 - amountOfSpaceSubtracted ; k++) {
+				System.out.print(" ");
+			}
+			for(int j = 0; j<numberOfCharacters;j++) {
+				System.out.print( character );	
+				
+				
+			
+					}
+			amountOfSpace  = amountOfSpace-1;
+			amountOfSpaceSubtracted++;
+			
+			}
+		//for single character
+		
+		}else {
+			
+			for(int i=0; i<numberOfRows;i++) {
+				System.out.println();
+				numberOfCharacters++;
+			for(int  k=0; k<amountOfSpace + 15; k++) {
+				System.out.print(" ");
+				}
+			
+				
+				
+					for(int j = 0; j<numberOfCharacters;j++) {
+					System.out.print(" " + character );	
+		
+				}
+					amountOfSpace  = amountOfSpace-1;
+					
+		}
+			
+		
+		
+		
+		}
+	}
+}
+
